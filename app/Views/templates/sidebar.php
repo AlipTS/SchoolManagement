@@ -147,6 +147,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/pages/documentation/documentation">
+                    <i class="mdi mdi-human-male-female menu-icon"></i>
+                    <span class="menu-title">PPDB</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/documentation/documentation">
                     <i class="mdi mdi-school menu-icon"></i>
                     <span class="menu-title">Ruang Alumni</span>
                 </a>

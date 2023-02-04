@@ -33,14 +33,14 @@ class Home extends BaseController
         }
         // --------------------------------------------perlakuan tiap menu ----------------------------------------------------------------
 
+        // dd($grup);
         if ($grup == 'inventaris') {
-
             // get list of Inventaris
             $this->DBinvent->select();
             $listInvent = $this->DBinvent->get()->getResultArray();
 
             // get list of Inventaris Terpinjam
-            $this->DBinvent_user->select();
+            $this->DBinvent_user->select('inventaris_user.*,nama_barang, fullname');
             $this->DBinvent_user->join('inventaris', 'inventaris.id = id_inventaris');
             $this->DBinvent_user->join('users', 'users.id = id_user');
             $this->DBinvent_user->where('konfir_kembali !=', 1);

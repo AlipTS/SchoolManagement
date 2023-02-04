@@ -75,11 +75,11 @@
                       </td>
                       <td>
                         <?= $l['tanggal_dikembalikan']; ?> &NonBreakingSpace;
-                        <?php if ($l['id_user'] == user_id()) : ?>
+                        <?php if ($l['id_user'] == user_id() && $l) : ?>
                           <form action="/Inventaris/kembalikan" method="POST" class="d-inline">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="idInventUser" value="<?= $l['id']; ?>">
-                            <button type=" submit" class="btn btn-success btn-icon-text" onclick="return confirm('apakah anda yakin?');">
+                            <button type=" submit" class="btn btn-success btn-icon-text" onclick="return confirm('apakah anda yakin?<?= $l['id']; ?>');">
                               Kembalikan
                             </button>
                           </form>

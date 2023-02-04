@@ -13,7 +13,7 @@
                             Inventaris | Peminjaman Inventaris | Tambah Peminjaman
                         </p>
                         <br>
-                        <form class="forms-sample" name="addInvtUsr" action="/Inventaris/addInv" method="POST" enctype="multipart/form-data">
+                        <form class="forms-sample" name="addInvtUsr" action="/inventaris/addInv" method="POST" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <div class="form-group">
                                 <label>Pilih Barang</label>
