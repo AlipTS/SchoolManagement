@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 $routes->get('/pages/inventaris/peminjamanInventaris/add/add', 'Inventaris::addInv');
+$routes->get('/pages/(:any)/(:any)/(:any)/(:num)', 'Home::editPagesSet/$1/$2/$3/$4');
 $routes->get('/pages/(:any)/(:any)/(:any)', 'Home::pagesSet/$1/$2/$3');
 $routes->get('/pages/(:any)/(:any)', 'Home::pages/$1/$2');
 

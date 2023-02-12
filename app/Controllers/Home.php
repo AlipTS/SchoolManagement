@@ -70,9 +70,33 @@ class Home extends BaseController
                 'controller' => $this
             ];
         }
+        if ($grup == 'inventaris' and $id == 'daftarInventaris' and $action == 'add') {
 
+            // get list of Inventaris
+            $this->DBinvent->select();
+            $listInvent = $this->DBinvent->get()->getResultArray();
 
+            $data = [
+                'list' => $listInvent,
+                'controller' => $this
+            ];
+        }
+        return view('pages/' . $grup . '/' . $id . '/' . $action, $data);
+    }
 
+    public function editPagesSet($grup, $id, $action, $sub)
+    {
+        if ($grup == 'inventaris' and $id == 'daftarInventaris' and $action == 'edit') {
+
+            // get list of Inventaris
+            $this->DBinvent->getInventUser($sub);
+            $listInvent = $this->DBinvent->get()->getResultArray()[0];
+
+            $data = [
+                'list' => $listInvent,
+                'controller' => $this
+            ];
+        }
         return view('pages/' . $grup . '/' . $id . '/' . $action, $data);
     }
 }

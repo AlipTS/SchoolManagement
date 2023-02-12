@@ -5,7 +5,6 @@ namespace App\Controllers;
 class Inventaris extends BaseController
 {
     protected $db, $DBinvent_user, $Binvent, $data;
-
     public function __construct()
     {
         $this->db = \config\Database::connect();
@@ -25,26 +24,34 @@ class Inventaris extends BaseController
             'konfir_kembali' => 0,
             'keterangan' => $this->request->getVar('keterangan')
         ]);
-
         return redirect()->to('/pages/inventaris/peminjamanInventaris');
     }
-
-
     public function kembalikan()
     {
-
         $id =  $this->request->getVar('idInventUser');
         $konfir_kembali = 1;
         $data = [
             'konfir_kembali' => $konfir_kembali
         ];
         $this->DBinvent_user->update($id, $data);
-
-
-
-
-
-
         return redirect()->to('/pages/inventaris/peminjamanInventaris');
+    }
+
+
+    public function addBarang()
+    {
+        $this->DBinvent->save([
+            'nama_barang' => $this->request->getVar('nama_barang'),
+            'kategori' => $this->request->getVar('kategori'),
+            'total_barang' => $this->request->getVar('total_barang'),
+            'penanggung_jawab' => $this->request->getVar('penanggung_jawab'),
+        ]);
+        return redirect()->to('/pages/inventaris/daftarInventaris');
+    }
+    public function hapusBarang()
+    {
+        $id =  $this->request->getVar('idInventt');
+        $this->DBinvent->delete($id);
+        return redirect()->to('/pages/inventaris/daftarInventaris');
     }
 }

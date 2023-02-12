@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class modelInventaris extends Model
 {
     protected $table = 'inventaris';
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $allowedFields = ['id', 'nama_barang', 'kategori', 'total_barang', 'sedang_dipinjam', 'bisa_untuk_dipinjam', 'penanggung_jawab'];
 
     public function getInventUser($id_inventaris = false)

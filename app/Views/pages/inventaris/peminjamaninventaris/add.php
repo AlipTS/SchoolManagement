@@ -30,10 +30,9 @@
                                     <?php endif; ?>
                                 </select>
                             </div>
-
                             <div class="form-group">
                                 <label for="exampleI nputEmail1">Jumlah</label>
-                                <input type="text" class="form-control" name="jumlah" placeholder="Jumlah">
+                                <input type="number" class="form-control" name="jumlah" placeholder="Jumlah">
                             </div>
                             <div class="form-group">
                                 <label for="exampleI nputEmail1">Pinjam Dari:</label>
@@ -48,7 +47,7 @@
                                 <textarea class="form-control" name="keterangan" rows="4"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a href="<?= base_url(); ?>/pages/inventaris/peminjamanInventaris/add" class="btn btn-success btn-icon-text">
+                            <a href="<?= base_url(); ?>/pages/inventaris/peminjamanInventaris/" class="btn btn-success btn-icon-text">
                                 <i class="ti-multiple btn-icon-prepend"></i>
                                 Batal
                             </a>

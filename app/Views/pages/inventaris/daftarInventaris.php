@@ -12,6 +12,11 @@
             <p class="card-description">
               Inventaris | Daftar Inventaris
             </p>
+            <br>
+            <a href="<?= base_url(); ?>/pages/inventaris/daftarInventaris/add" class="btn btn-success btn-icon-text">
+              <i class="ti-plus btn-icon-prepend"></i>
+              Pinjam
+            </a>
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
@@ -36,6 +41,9 @@
                     </th>
                     <th>
                       Penanggung Jawab
+                    </th>
+                    <th>
+                      Aksi
                     </th>
                   </tr>
                 </thead>
@@ -70,6 +78,22 @@
                       </td>
                       <td>
                         <?= $l['penanggung_jawab']; ?>
+                      </td>
+                      <td>
+                        <?php if (in_groups('admin')) : ?>
+                          <form action="/Inventaris/hapusBarang" method="POST" class="d-inline">
+                            <?= csrf_field(); ?>
+                            <input type="hidden" name="idInventt" value="<?= $l['id']; ?>">
+                            <a href="<?= base_url(); ?>/pages/inventaris/daftarInventaris/edit/<?= $l['id']; ?>" class="btn btn-primary btn-icon-text">
+                              Edit
+                            </a>
+                            <button type="submit" class="btn btn-danger btn-icon-text" onclick="return confirm('apakah anda yakin?');">
+                              delete
+                            </button>
+                          </form>
+
+                        <?php endif; ?>
+
                       </td>
                     </tr>
 
